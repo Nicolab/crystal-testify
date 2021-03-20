@@ -1,0 +1,18 @@
+name: testify
+version: 0.1.0
+crystal: 0.36.1
+license: MIT
+
+authors:
+  - Nicolas Talle <dev@nicolab.net>
+
+targets:
+  testify:
+    main: src/testify.cr
+
+crystalline:
+  main: spec/testify_spec.cr
+
+development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
