@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.35.1">
+<meta name="crystal_docs.project_version" content="master">
+<meta name="crystal_docs.project_name" content="testify">
+
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+  <meta name="repository-name" content="testify">
+  <title>testify master</title>
+  <script type="text/javascript">
+  CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          testify
+        </a>
+      </h1>
+
+      <span class="project-version">
+        master
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="testify/Testify" data-name="testify">
+      <a href="Testify.html">Testify</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="testify/Testify/Test" data-name="testify::test">
+      <a href="Testify/Test.html">Test</a>
+      
+        <ul>
+  
+  <li class=" " data-id="testify/Testify/Test/Data" data-name="testify::test::data">
+      <a href="Testify/Test/Data.html">Data</a>
+      
+    </li>
+  
+  <li class=" " data-id="testify/Testify/Test/Focus" data-name="testify::test::focus">
+      <a href="Testify/Test/Focus.html">Focus</a>
+      
+    </li>
+  
+  <li class=" " data-id="testify/Testify/Test/Pending" data-name="testify::test::pending">
+      <a href="Testify/Test/Pending.html">Pending</a>
+      
+    </li>
+  
+  <li class=" " data-id="testify/Testify/Test/Skip" data-name="testify::test::skip">
+      <a href="Testify/Test/Skip.html">Skip</a>
+      
+    </li>
+  
+  <li class=" " data-id="testify/Testify/Test/Tags" data-name="testify::test::tags">
+      <a href="Testify/Test/Tags.html">Tags</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="testify/Testify/Tracker" data-name="testify::tracker">
+      <a href="Testify/Tracker.html">Tracker</a>
+      
+        <ul>
+  
+  <li class=" " data-id="testify/Testify/Tracker/LogTracer" data-name="testify::tracker::logtracer">
+      <a href="Testify/Tracker/LogTracer.html">LogTracer</a>
+      
+    </li>
+  
+  <li class="parent " data-id="testify/Testify/Tracker/Tracer" data-name="testify::tracker::tracer(a)">
+      <a href="Testify/Tracker/Tracer.html">Tracer</a>
+      
+        <ul>
+  
+  <li class=" " data-id="testify/Testify/Tracker/Tracer/Arg" data-name="testify::tracker::tracer::arg(t)">
+      <a href="Testify/Tracker/Tracer/Arg.html">Arg</a>
+      
+    </li>
+  
+  <li class=" " data-id="testify/Testify/Tracker/Tracer/Trace" data-name="testify::tracker::tracer::trace(a)">
+      <a href="Testify/Tracker/Tracer/Trace.html">Trace</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1><a id="testify" class="anchor" href="#testify">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Testify</h1>
+
+<p><a href="https://github.com/Nicolab/crystal-testify/actions"><img src="https://github.com/Nicolab/crystal-testify/workflows/CI/badge.svg?branch=master" alt="CI Status"/></a> <a href="https://github.com/Nicolab/crystal-testify/releases"><img src="https://img.shields.io/github/release/Nicolab/crystal-testify.svg" alt="GitHub release"/></a> <a href="https://nicolab.github.io/crystal-testify/"><img src="https://img.shields.io/badge/docs-available-brightgreen.svg" alt="Docs"/></a></p>
+
+<p>Testing utilities for Crystal lang specs.</p>
+
+<p>Specs or unit test style?</p>
+
+<p>The both! Based on std's Crystal Spec, Testify is an OOP abstraction for creating unit and integration tests.
+This allows structuring some tests in an objective of maintenability, extendability and reusability.</p>
+
+<p>Some tests require a Spec style:</p>
+
+<pre><code class="language-crystal">it <span class="s">&quot;should create an account and send a welcome email&quot;</span> <span class="k">do</span>
+  <span class="c"># ...</span>
+<span class="k">end</span></code></pre>
+
+<p>Other tests require a unitary way:</p>
+
+<pre><code class="language-crystal"><span class="k">def</span> <span class="m">test_send_html_email</span>
+  <span class="c"># ...</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="m">test_send_text_email</span>
+  <span class="c"># ...</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="m">test_get_with_default_value</span>
+  <span class="c"># ...</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="m">test_get_without_default_value</span>
+  <span class="c"># ...</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="m">test_delete_by_id</span>
+  <span class="c"># ...</span>
+<span class="k">end</span></code></pre>
+
+<p>Other tests require the benefits of OOP. Advanced example:</p>
+
+<pre><code class="language-crystal"><span class="c"># Common tests for all model.</span>
+<span class="k">abstract</span> <span class="k">class</span> <span class="t">ModelTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+  <span class="k">def</span> <span class="m">before_all</span>
+    db.connect
+    db.create_tables
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">after_all</span>
+    db.clean
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">before_each</span>
+    db.init
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">after_each</span>
+    db.reset
+  <span class="k">end</span>
+
+  <span class="k">abstract</span> <span class="k">def</span> <span class="m">db</span> : <span class="t">DBHelper</span>
+  <span class="k">abstract</span> <span class="k">def</span> <span class="m">model_class</span> : <span class="t">Model</span>.<span class="k">class</span>
+  <span class="k">abstract</span> <span class="k">def</span> <span class="m">get_model_values</span> : <span class="t">Hash</span>
+  <span class="k">abstract</span> <span class="k">def</span> <span class="m">get_updated_model_values</span> : <span class="t">Hash</span>
+
+  @[<span class="t">Data</span>(<span class="s">&quot;get_model_values&quot;</span>)]
+  <span class="k">def</span> <span class="m">test_create</span>(values, expected)
+    model <span class="o">=</span> model_class.create(values)
+    model.should be_a <span class="t">Model</span>
+    model.to_h should eq expected
+  <span class="k">end</span>
+
+  @[<span class="t">Data</span>(<span class="s">&quot;get_updated_model_values&quot;</span>)]
+  <span class="k">def</span> <span class="m">test_update</span>(values, expected)
+    model_class.create(get_model_values)
+    model_class.update(values).to_h.should eq expected
+    <span class="c"># ...</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">test_delete_by_id</span>
+    id <span class="o">=</span> model_class.create(get_model_values)
+    id.should be_a(<span class="t">Int32</span>)
+    model_class.delete(id).rows_affected.should eq <span class="n">1</span>
+    model_class.find?(id).should eq <span class="n">nil</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">test_find_by_id</span>
+    <span class="c"># ...</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<p>In this example, thanks to <code>ModelTest</code> class defined above.
+Because we define a common behavior that can be used by all the models that inherit it.</p>
+
+<p>With the main benefits:</p>
+
+<ul><li>Common lifecycle hooks (before_all, before_each, ...).</li><li>Some tests common to all models do not need to be repeated.</li><li>Clean structured fashion for all models.</li><li>Reusability (example: <code>AdminTest < UserTest</code> that reuses common tests, states and <code>Data</code> source).</li></ul>
+
+<p>Common tests will be automatically executed (by inheritance):</p>
+
+<pre><code class="language-crystal"><span class="c"># Test cases for the User model.</span>
+<span class="k">class</span> <span class="t">UserTest</span> <span class="o">&lt;</span> <span class="t">ModelTest</span>
+  getter db : <span class="t">DBHelper</span> <span class="o">=</span> <span class="t">DBHelper</span>.<span class="k">new</span>
+  getter model_class : <span class="t">Model</span>.<span class="k">class</span> <span class="o">=</span> <span class="t">User</span>
+
+  <span class="c"># `Data` source.</span>
+  <span class="k">def</span> <span class="m">get_model_values</span> : <span class="t">Hash</span>
+    {
+      <span class="s">&quot;username&quot;</span> => <span class="s">&quot;foo&quot;</span>,
+      <span class="s">&quot;email&quot;</span> => <span class="s">&quot;hello@example.org&quot;</span>,
+      <span class="c"># ...</span>
+    }
+  <span class="k">end</span>
+
+  <span class="c"># Updated `Data` source.</span>
+  <span class="k">def</span> <span class="m">get_updated_model_values</span> : <span class="t">Hash</span>
+    user_h <span class="o">=</span> get_model_values
+    user_h[<span class="s">&quot;username&quot;</span>] <span class="o">=</span> <span class="s">&quot;bar&quot;</span>
+    user_h[<span class="s">&quot;email&quot;</span>] <span class="o">=</span> <span class="s">&quot;updated@example.org&quot;</span>
+    user_h
+  <span class="k">end</span>
+
+  <span class="c"># Just write other tests specific to the model User...</span>
+<span class="k">end</span></code></pre>
+
+<h2><a id="installation" class="anchor" href="#installation">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Installation</h2>
+
+<ol><li>Add the dependency to your <code>shard.yml</code>:</li></ol>
+
+<pre><code class="language-yaml">   dependencies:
+     testify:
+       github: nicolab/crystal-testify
+       version: ~> 1.0.0 # Check the latest version!</code></pre>
+
+<ol><li>Run <code>shards install</code></li></ol>
+
+<h2><a id="usage" class="anchor" href="#usage">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Usage</h2>
+
+<p>📘 <a href="https://nicolab.github.io/crystal-testify/">API doc</a>.</p>
+
+<hr/><p>Based and fully compliant with:</p>
+
+<ul><li><a href="https://crystal-lang.org/api/Spec.html">Crystal Spec std's</a></li><li><a href="https://crystal-lang.org/reference/guides/testing.html">Testing Crystal Code</a></li></ul>
+
+<hr/><p>Define the test(s) class(es):</p>
+
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;testify&quot;</span>
+
+<span class="k">class</span> <span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+  @hey <span class="o">=</span> <span class="s">&quot;Crystal is awesome!&quot;</span>
+
+  <span class="k">def</span> <span class="m">test_something</span>
+    <span class="n">true</span>.should eq <span class="n">true</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">test_my_mood</span>
+    @hey.should eq <span class="s">&quot;Crystal is awesome!&quot;</span>
+  <span class="k">end</span>
+
+  <span class="c"># ...</span>
+<span class="k">end</span>
+
+<span class="k">class</span> <span class="t">AnotherTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+  <span class="k">def</span> <span class="m">test_foo</span>
+    <span class="n">true</span>.should eq <span class="n">true</span>
+    <span class="c"># ...</span>
+  <span class="k">end</span>
+
+  <span class="c"># ...</span>
+<span class="k">end</span>
+
+<span class="c"># Runs all test cases</span>
+<span class="t">Testify</span>.run_all</code></pre>
+
+<p>A <code>Test</code> class can be run alone:</p>
+
+<pre><code class="language-crystal"><span class="c"># Runs only ExampleTest tests</span>
+<span class="t">ExampleTest</span>.run
+
+<span class="c"># Runs only AnotherTest tests</span>
+<span class="t">AnotherTest</span>.run</code></pre>
+
+<p>Internally, <code>Testify.run_all</code> executes the <code>run</code> method of each <code>Test</code> class defined.</p>
+
+<h3><a id="poo" class="anchor" href="#poo">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>POO</h3>
+
+<p>All benefits related to a class are available, like:</p>
+
+<ul><li><a href="https://crystal-lang.org/reference/syntax_and_semantics/macros/hooks.html">macros: hooks</a></li><li><a href="https://crystal-lang.org/reference/syntax_and_semantics/finalize.html">finalize</a></li><li><a href="https://crystal-lang.org/reference/syntax_and_semantics/annotations/index.html">annotations</a></li><li>Macros, inheritance, modules, variables, methods, visibility, ... powerful 🚀</li></ul>
+
+<p>Under the hood:</p>
+
+<ul><li>A class defines a "describe" block.</li><li>Methods <code>test_</code> and <code>ftest_</code>, define a <code>it</code> block.</li><li><code>ptest_</code> method, <code>Pending</code> and <code>Skip</code> annotations, define a <code>pending</code> block.</li><li><code>ftest_</code> method and <code>Focus</code> annotation, add <code>focus: true</code> to a <code>it</code> block.</li><li><code>Tags("foo")</code> annotation on a <code>test</code> method, add <code>tags: "foo"</code> to a <code>it</code> block.</li><li><code>Tags("foo")</code> annotation on a <code>Test</code> class, add <code>tags: "foo"</code> to a <code>describe</code> block.</li></ul>
+
+<h3><a id="lifecycle" class="anchor" href="#lifecycle">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Lifecycle</h3>
+
+<p>Optionally if you need life cycle hooks related to your tests.</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+  <span class="k">def</span> <span class="m">before_all</span>
+    puts <span class="s">&quot;before_all&quot;</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">before_each</span>
+    puts <span class="s">&quot;before_each&quot;</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">around_all</span>(test)
+    puts <span class="s">&quot;around_all - before&quot;</span>
+    test.run
+    puts <span class="s">&quot;around_all - after&quot;</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">around_each</span>(test)
+    puts <span class="s">&quot;around_each - before&quot;</span>
+    test.run
+    puts <span class="s">&quot;around_each - after&quot;</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">after_all</span>
+    puts <span class="s">&quot;before_all&quot;</span>
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">after_each</span>
+    puts <span class="s">&quot;before_each&quot;</span>
+  <span class="k">end</span>
+
+  <span class="c"># ...</span>
+<span class="k">end</span></code></pre>
+
+<h3><a id="initialize" class="anchor" href="#initialize">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Initialize</h3>
+
+<p>Optionally if you need to initialize some variables.</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+  <span class="c"># You can initialize variables, constants, contexts, ...</span>
+
+  <span class="k">def</span> <span class="m">initialize</span>
+    <span class="c"># Configure here...</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<h3><a id="test-cases" class="anchor" href="#test-cases">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Test cases</h3>
+
+<p>A test case, it's like:</p>
+
+<pre><code class="language-crystal">it <span class="s">&quot;my feature&quot;</span> <span class="k">do</span>
+  <span class="c"># ...</span>
+<span class="k">end</span></code></pre>
+
+<p>Except that this is written in the OOP way, in a method:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+  <span class="c"># A test case</span>
+  <span class="k">def</span> <span class="m">test_my_feature</span>
+    <span class="c"># ...</span>
+  <span class="k">end</span>
+
+  <span class="c"># Another test.</span>
+  <span class="k">def</span> <span class="m">test_another_thing</span>
+    <span class="c"># ...</span>
+  <span class="k">end</span>
+
+  <span class="c"># ...</span>
+<span class="k">end</span></code></pre>
+
+<h3><a id="pending-test-skip-test" class="anchor" href="#pending-test-skip-test">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Pending test / Skip test</h3>
+
+<p>Pending test, it's like:</p>
+
+<pre><code class="language-crystal">pending <span class="s">&quot;my feature&quot;</span> <span class="k">do</span>
+  <span class="c"># ...</span>
+<span class="k">end</span></code></pre>
+
+<p>This can be written:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+  <span class="c"># Prefixed by `p`</span>
+  <span class="k">def</span> <span class="m">ptest_my_feature</span>
+    <span class="c"># ...</span>
+  <span class="k">end</span>
+
+  <span class="c"># Pending test with `Pending` annotation.</span>
+  @[<span class="t">Pending</span>]
+  <span class="k">def</span> <span class="m">test_my_feature</span>
+    <span class="c"># ...</span>
+  <span class="k">end</span>
+
+  <span class="c"># Pending test with `Skip` annotation.</span>
+  <span class="c"># Same as `Pending`, just another syntactic flavor.</span>
+  @[<span class="t">Skip</span>]
+  <span class="k">def</span> <span class="m">test_my_feature</span>
+    <span class="c"># ...</span>
+  <span class="k">end</span>
+
+  <span class="c"># ...</span>
+<span class="k">end</span></code></pre>
+
+<p>A class can be skipped:</p>
+
+<pre><code class="language-crystal">@[<span class="t">Pending</span>]
+<span class="c"># or @[Skip]</span>
+<span class="k">class</span> <span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+  <span class="c"># ...</span>
+<span class="k">end</span></code></pre>
+
+<p>It's like marking a <code>describe</code> block as <code>pending</code>.
+All tests contained in the current class will be skipped.</p>
+
+<h3><a id="focused-test" class="anchor" href="#focused-test">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Focused test</h3>
+
+<p>Focused test, it's like:</p>
+
+<pre><code class="language-crystal">it <span class="s">&quot;my feature&quot;</span>, focus: <span class="n">true</span> <span class="k">do</span>
+  <span class="c"># ...</span>
+<span class="k">end</span></code></pre>
+
+<p>This can be written:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+  <span class="c"># Prefixed by `f`</span>
+  <span class="k">def</span> <span class="m">ftest_my_feature</span>
+  <span class="k">end</span>
+
+  <span class="c"># Focused test with `Focus` annotation.</span>
+  @[<span class="t">Focus</span>]
+  <span class="k">def</span> <span class="m">test_my_feature</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<p>A class can be focused:</p>
+
+<pre><code class="language-crystal">@[<span class="t">Focus</span>]
+<span class="k">class</span> <span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+  <span class="c"># ...</span>
+<span class="k">end</span></code></pre>
+
+<p>It's like focusing a <code>describe</code> block.
+Only the tests contained in the focused class will be executed.</p>
+
+<h3><a id="tags" class="anchor" href="#tags">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Tags</h3>
+
+<p>Tags test with <code>Tags</code> annotation, it's like:</p>
+
+<pre><code class="language-crystal">it <span class="s">&quot;my feature&quot;</span>, tags: <span class="s">&quot;slow&quot;</span> <span class="k">do</span>
+  <span class="c"># ...</span>
+<span class="k">end</span></code></pre>
+
+<p>This can be written:</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+  @[<span class="t">Tags</span>(<span class="s">&quot;slow&quot;</span>)]
+  <span class="k">def</span> <span class="m">test_my_feature</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+<p>A class can be tagged:</p>
+
+<pre><code class="language-crystal">@[<span class="t">Tags</span>(<span class="s">&quot;foo&quot;</span>)]
+<span class="k">class</span> <span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+  <span class="c"># ...</span>
+<span class="k">end</span></code></pre>
+
+<p>It's like tagging a <code>describe</code> block.</p>
+
+<h3><a id="tacker-tracer" class="anchor" href="#tacker-tracer">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Tacker / Tracer</h3>
+
+<p>Tracking utilities to trace some behaviors (like a method call, an event listener, a <code>spawn</code>, a <code>Channel</code>, ...).</p>
+
+<h2><a id="development" class="anchor" href="#development">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Development</h2>
+
+<p>Install dev dependencies:</p>
+
+<pre><code class="language-sh">shards install</code></pre>
+
+<p>Run:</p>
+
+<pre><code class="language-sh">crystal spec</code></pre>
+
+<p>Clean before commit:</p>
+
+<pre><code class="language-sh">crystal tool format
+./bin/ameba</code></pre>
+
+<h2><a id="contributing" class="anchor" href="#contributing">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributing</h2>
+
+<ol><li>Fork it (https://github.com/Nicolab/crystal-testify/fork)</li><li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li><li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li><li>Push to the branch (<code>git push origin my-new-feature</code>)</li><li>Create a new Pull Request</li></ol>
+
+<h2><a id="license" class="anchor" href="#license">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>LICENSE</h2>
+
+<p><a href="https://github.com/Nicolab/crystal-testify/blob/master/LICENSE">MIT</a> (c) 2021, Nicolas Talle.</p>
+
+<h2><a id="author" class="anchor" href="#author">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Author</h2>
+
+<p>| <a href="https://github.com/sponsors/Nicolab"><img src="https://www.gravatar.com/avatar/d7dd0f4769f3aa48a3ecb308f0b457fc?s=64" alt="Nicolas Tallefourtane - Nicolab.net"/></a> |
+|---|
+| <a href="https://github.com/sponsors/Nicolab">Nicolas Talle</a> |
+| <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PGRH4ZXP36GUC"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" alt="Make a donation via Paypal"/></a> |</p>
+
+<h3><a id="inspi" class="anchor" href="#inspi">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Inspi</h3>
+
+<ul><li><a href="https://en.wikipedia.org/wiki/Unit_testing">Unit testing</a></li><li><a href="https://en.wikipedia.org/wiki/Integration_testing">Integration testing</a></li><li><a href="https://en.wikipedia.org/wiki/Data-driven_testing">Data-Driven testing</a></li><li><a href="https://github.com/athena-framework/spec/blob/a28a66ee0985d5aed7948183a5942c1c04848a31/src/test_case.cr">ASPEC class</a></li><li><a href="https://crystal-lang.org/reference/guides/testing.html">Testing Crystal Code</a></li><li><a href="https://crystal-lang.org/api/Spec.html">Crystal Spec std's</a></li></ul>
+</div>
+</body>
+</html>

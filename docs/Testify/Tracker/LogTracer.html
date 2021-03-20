@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.35.1">
+<meta name="crystal_docs.project_version" content="master">
+<meta name="crystal_docs.project_name" content="testify">
+
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/doc.js"></script>
+
+  <meta name="repository-name" content="testify">
+  <title>Testify::Tracker::LogTracer - testify master</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../../index.html">
+          testify
+        </a>
+      </h1>
+
+      <span class="project-version">
+        master
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="testify/Testify" data-name="testify">
+      <a href="../../Testify.html">Testify</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="testify/Testify/Test" data-name="testify::test">
+      <a href="../../Testify/Test.html">Test</a>
+      
+        <ul>
+  
+  <li class=" " data-id="testify/Testify/Test/Data" data-name="testify::test::data">
+      <a href="../../Testify/Test/Data.html">Data</a>
+      
+    </li>
+  
+  <li class=" " data-id="testify/Testify/Test/Focus" data-name="testify::test::focus">
+      <a href="../../Testify/Test/Focus.html">Focus</a>
+      
+    </li>
+  
+  <li class=" " data-id="testify/Testify/Test/Pending" data-name="testify::test::pending">
+      <a href="../../Testify/Test/Pending.html">Pending</a>
+      
+    </li>
+  
+  <li class=" " data-id="testify/Testify/Test/Skip" data-name="testify::test::skip">
+      <a href="../../Testify/Test/Skip.html">Skip</a>
+      
+    </li>
+  
+  <li class=" " data-id="testify/Testify/Test/Tags" data-name="testify::test::tags">
+      <a href="../../Testify/Test/Tags.html">Tags</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent open current" data-id="testify/Testify/Tracker" data-name="testify::tracker">
+      <a href="../../Testify/Tracker.html">Tracker</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="testify/Testify/Tracker/LogTracer" data-name="testify::tracker::logtracer">
+      <a href="../../Testify/Tracker/LogTracer.html">LogTracer</a>
+      
+    </li>
+  
+  <li class="parent " data-id="testify/Testify/Tracker/Tracer" data-name="testify::tracker::tracer(a)">
+      <a href="../../Testify/Tracker/Tracer.html">Tracer</a>
+      
+        <ul>
+  
+  <li class=" " data-id="testify/Testify/Tracker/Tracer/Arg" data-name="testify::tracker::tracer::arg(t)">
+      <a href="../../Testify/Tracker/Tracer/Arg.html">Arg</a>
+      
+    </li>
+  
+  <li class=" " data-id="testify/Testify/Tracker/Tracer/Trace" data-name="testify::tracker::tracer::trace(a)">
+      <a href="../../Testify/Tracker/Tracer/Trace.html">Trace</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Testify::Tracker::LogTracer
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Testify/Tracker/LogTracer.html">Testify::Tracker::LogTracer</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>A simple <code><a href="../../Testify/Tracker/Tracer.html">Tracer</a></code> implementation that logs calls.
+By default it logs the number of calls of the <code><a href="../../Testify/Tracker/LogTracer.html#add(name:String%7CSymbol,message:String?=nil)-instance-method">#add</a></code> method
+but it is possible to specify a different message to the <code><a href="../../Testify/Tracker/LogTracer.html#add(name:String%7CSymbol,message:String?=nil)-instance-method">#add</a></code> method.</p>
+
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+  <span class="k">include</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Tracker</span>
+
+  <span class="k">def</span> <span class="m">initialize</span>
+    @tracer <span class="o">=</span> <span class="t">LogTracer</span>.<span class="k">new</span>
+    log_trace(<span class="n">:initialize</span>)
+    log_trace(<span class="n">:key_is_a_symbol_or_string</span>)
+    log_trace(<span class="s">&quot;foo&quot;</span>, <span class="s">&quot;bar&quot;</span>)
+    log_trace(<span class="s">&quot;foo&quot;</span>, <span class="s">&quot;another trace for foo&quot;</span>)
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">log_trace</span>(name : <span class="t">String</span> <span class="o">|</span> <span class="t">Symbol</span>, message : <span class="t">String</span>? <span class="o">=</span> <span class="n">nil</span>) : <span class="t">Nil</span>
+    @tracer.add(name, message)
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">tracer_size</span>(name : <span class="t">String</span> <span class="o">|</span> <span class="t">Symbol</span>) : <span class="t">Int32</span>
+    @tracer.size(name)
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">tracer</span> : <span class="t">LogTracer</span>
+    @tracer
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="m">test_example_tracer</span>
+    tracer_size(<span class="s">&quot;foo&quot;</span>).should eq <span class="n">2</span>
+
+    <span class="c"># debug</span>
+    pp tracer.get(<span class="s">&quot;foo&quot;</span>)
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/Nicolab/crystal-testify/blob/cca5ae9c34daaa526abbddb2f89e2a542c777ed4/src/tracer/log_tracer.cr#L45" target="_blank">
+        tracer/log_tracer.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new-class-method" class="signature"><strong>.new</strong></a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#add(name:String%7CSymbol,message:String?=nil)-instance-method" class="signature"><strong>#add</strong>(name : String | Symbol, message : String? = <span class="n">nil</span>)</a>
+        
+          <div class="summary"><p>Creates a trace referenced to the <em>name</em> namespace.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size(name:String%7CSymbol):Int32-instance-method" class="signature"><strong>#size</strong>(name : String | Symbol) : Int32</a>
+        
+          <div class="summary"><p>Returns the number of traces performed.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tracer:Tracer(String)-instance-method" class="signature"><strong>#tracer</strong> : Tracer(String)</a>
+        
+          <div class="summary"><p>Returns the <code><a href="../../Testify/Tracker/Tracer.html">Tracer</a></code> instance used by the <code><a href="../../Testify/Tracker/LogTracer.html">LogTracer</a></code> instance.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#traces-instance-method" class="signature"><strong>#traces</strong></a>
+        
+          <div class="summary"><p>Returns all traces.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>
+
+        <a class="method-permalink" href="#new-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Nicolab/crystal-testify/blob/cca5ae9c34daaa526abbddb2f89e2a542c777ed4/src/tracer/log_tracer.cr#L48" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="add(name:String|Symbol,message:String?=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>add</strong>(name : String | Symbol, message : String? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#add(name:String%7CSymbol,message:String?=nil)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a trace referenced to the <em>name</em> namespace.
+The default <em>message</em> is the increment number of the current call (<code>#1, #2, #3, ...</code>).
+See <code><a href="../../Testify/Tracker/Tracer.html#add(name:String%7CSymbol,args:Array)-instance-method">Tracer#add</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Nicolab/crystal-testify/blob/cca5ae9c34daaa526abbddb2f89e2a542c777ed4/src/tracer/log_tracer.cr#L55" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size(name:String|Symbol):Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>size</strong>(name : String | Symbol) : Int32
+
+        <a class="method-permalink" href="#size(name:String%7CSymbol):Int32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the number of traces performed.
+See <code><a href="../../Testify/Tracker/Tracer.html#size(name:String%7CSymbol):Int32-instance-method">Tracer#size</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Nicolab/crystal-testify/blob/cca5ae9c34daaa526abbddb2f89e2a542c777ed4/src/tracer/log_tracer.cr#L61" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tracer:Tracer(String)-instance-method">
+      <div class="signature">
+        
+        def <strong>tracer</strong> : <a href="../../Testify/Tracker/Tracer.html">Tracer</a>(String)
+
+        <a class="method-permalink" href="#tracer:Tracer(String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the <code><a href="../../Testify/Tracker/Tracer.html">Tracer</a></code> instance used by the <code><a href="../../Testify/Tracker/LogTracer.html">LogTracer</a></code> instance.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Nicolab/crystal-testify/blob/cca5ae9c34daaa526abbddb2f89e2a542c777ed4/src/tracer/log_tracer.cr#L72" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="traces-instance-method">
+      <div class="signature">
+        
+        def <strong>traces</strong>
+
+        <a class="method-permalink" href="#traces-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns all traces.
+See <code><a href="../../Testify/Tracker/Tracer.html#traces:Hash(String,Array(Trace(A)))-instance-method">Tracer#traces</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Nicolab/crystal-testify/blob/cca5ae9c34daaa526abbddb2f89e2a542c777ed4/src/tracer/log_tracer.cr#L67" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
