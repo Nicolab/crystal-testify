@@ -91,6 +91,7 @@ describe Testify do
     CODE
 
     output = `crystal eval #{Process.quote(code)}`
+    $?.success?.should be_true
     output.should contain "Finished in"
     output.should contain "ftest_focus executed"
     output.should_not contain "test_thing executed"
