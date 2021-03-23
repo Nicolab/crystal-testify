@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Crystal Docs 0.35.1">
-<meta name="crystal_docs.project_version" content="master">
+<meta name="crystal_docs.project_version" content="master-dev">
 <meta name="crystal_docs.project_name" content="testify">
 
 
@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="testify">
-  <title>Testify::Test - testify master</title>
+  <title>Testify::Test - testify master-dev</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -39,7 +39,7 @@
       </h1>
 
       <span class="project-version">
-        master
+        master-dev
       </span>
     </div>
   </div>
@@ -192,13 +192,6 @@ Macros, <code>abstract def</code>, <code>super</code> and other OOP features can
     Defined in:
   </h2>
   
-    
-      <a href="https://github.com/Nicolab/crystal-testify/blob/cca5ae9c34daaa526abbddb2f89e2a542c777ed4/src/testify.cr#L40" target="_blank">
-        testify.cr
-      </a>
-    
-    <br/>
-  
 
 
 
@@ -339,8 +332,6 @@ Macros, <code>abstract def</code>, <code>super</code> and other OOP features can
       <br/>
       <div>
         
-          [<a href="https://github.com/Nicolab/crystal-testify/blob/cca5ae9c34daaa526abbddb2f89e2a542c777ed4/src/testify.cr#L104" target="_blank">View source</a>]
-        
       </div>
     </div>
   
@@ -368,7 +359,7 @@ Macros, <code>abstract def</code>, <code>super</code> and other OOP features can
           
           <p>Method executed after the last test in the current class runs.</p>
 
-<pre><code class="language-crystal"><span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
   <span class="k">def</span> <span class="m">after_all</span> : <span class="t">Nil</span>
     puts <span class="s">&quot;after_all&quot;</span>
   <span class="k">end</span>
@@ -377,8 +368,6 @@ Macros, <code>abstract def</code>, <code>super</code> and other OOP features can
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/Nicolab/crystal-testify/blob/cca5ae9c34daaa526abbddb2f89e2a542c777ed4/src/testify.cr#L259" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -395,7 +384,7 @@ Macros, <code>abstract def</code>, <code>super</code> and other OOP features can
           
           <p>Method executed after each test in the current class runs.</p>
 
-<pre><code class="language-crystal"><span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
   <span class="k">def</span> <span class="m">after_each</span> : <span class="t">Nil</span>
     puts <span class="s">&quot;after_each&quot;</span>
   <span class="k">end</span>
@@ -404,8 +393,6 @@ Macros, <code>abstract def</code>, <code>super</code> and other OOP features can
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/Nicolab/crystal-testify/blob/cca5ae9c34daaa526abbddb2f89e2a542c777ed4/src/testify.cr#L271" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -422,7 +409,7 @@ Macros, <code>abstract def</code>, <code>super</code> and other OOP features can
           
           <p>Method executed when the current class runs.</p>
 
-<pre><code class="language-crystal"><span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
   <span class="k">def</span> <span class="m">around_all</span>(test) : <span class="t">Nil</span>
     puts <span class="s">&quot;around_all: before&quot;</span>
     test.run
@@ -433,8 +420,6 @@ Macros, <code>abstract def</code>, <code>super</code> and other OOP features can
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/Nicolab/crystal-testify/blob/cca5ae9c34daaa526abbddb2f89e2a542c777ed4/src/testify.cr#L285" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -451,7 +436,7 @@ Macros, <code>abstract def</code>, <code>super</code> and other OOP features can
           
           <p>Method executed when each test in the current class runs.</p>
 
-<pre><code class="language-crystal"><span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
   <span class="k">def</span> <span class="m">around_each</span>(test) : <span class="t">Nil</span>
     puts <span class="s">&quot;around_each: before&quot;</span>
     test.run
@@ -462,8 +447,6 @@ Macros, <code>abstract def</code>, <code>super</code> and other OOP features can
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/Nicolab/crystal-testify/blob/cca5ae9c34daaa526abbddb2f89e2a542c777ed4/src/testify.cr#L300" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -480,7 +463,7 @@ Macros, <code>abstract def</code>, <code>super</code> and other OOP features can
           
           <p>Method executed before the first test in the current class runs.</p>
 
-<pre><code class="language-crystal"><span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
   <span class="k">def</span> <span class="m">before_all</span> : <span class="t">Nil</span>
     puts <span class="s">&quot;before_all&quot;</span>
   <span class="k">end</span>
@@ -489,8 +472,6 @@ Macros, <code>abstract def</code>, <code>super</code> and other OOP features can
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/Nicolab/crystal-testify/blob/cca5ae9c34daaa526abbddb2f89e2a542c777ed4/src/testify.cr#L235" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -507,7 +488,7 @@ Macros, <code>abstract def</code>, <code>super</code> and other OOP features can
           
           <p>Method executed before each test in the current class runs.</p>
 
-<pre><code class="language-crystal"><span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">ExampleTest</span> <span class="o">&lt;</span> <span class="t">Testify</span><span class="t">::</span><span class="t">Test</span>
   <span class="k">def</span> <span class="m">before_each</span> : <span class="t">Nil</span>
     puts <span class="s">&quot;before_each&quot;</span>
   <span class="k">end</span>
@@ -516,8 +497,6 @@ Macros, <code>abstract def</code>, <code>super</code> and other OOP features can
       
       <br/>
       <div>
-        
-          [<a href="https://github.com/Nicolab/crystal-testify/blob/cca5ae9c34daaa526abbddb2f89e2a542c777ed4/src/testify.cr#L247" target="_blank">View source</a>]
         
       </div>
     </div>
