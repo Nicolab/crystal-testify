@@ -38,7 +38,7 @@ module Testify
   #
   # > See [README](https://github.com/Nicolab/crystal-testify/) for more details and examples.
   abstract class Test
-    # This class is a refactoring (redesigned, corrected and improved) started from:
+    # This class was inspired (redesigned, corrected and improved) by:
     # https://github.com/athena-framework/spec/blob/a28a66ee0985d5aed7948183a5942c1c04848a31/src/test_case.cr
 
     # `Tags` can be used to group tests and specs,
@@ -226,7 +226,7 @@ module Testify
     # Method executed before the first test in the current class runs.
     #
     # ```
-    # ExampleTest < Testify::Test
+    # class ExampleTest < Testify::Test
     #   def before_all : Nil
     #     puts "before_all"
     #   end
@@ -238,7 +238,7 @@ module Testify
     # Method executed before each test in the current class runs.
     #
     # ```
-    # ExampleTest < Testify::Test
+    # class ExampleTest < Testify::Test
     #   def before_each : Nil
     #     puts "before_each"
     #   end
@@ -250,7 +250,7 @@ module Testify
     # Method executed after the last test in the current class runs.
     #
     # ```
-    # ExampleTest < Testify::Test
+    # class ExampleTest < Testify::Test
     #   def after_all : Nil
     #     puts "after_all"
     #   end
@@ -262,7 +262,7 @@ module Testify
     # Method executed after each test in the current class runs.
     #
     # ```
-    # ExampleTest < Testify::Test
+    # class ExampleTest < Testify::Test
     #   def after_each : Nil
     #     puts "after_each"
     #   end
@@ -274,7 +274,7 @@ module Testify
     # Method executed when the current class runs.
     #
     # ```
-    # ExampleTest < Testify::Test
+    # class ExampleTest < Testify::Test
     #   def around_all(test) : Nil
     #     puts "around_all: before"
     #     test.run
@@ -289,7 +289,7 @@ module Testify
     # Method executed when each test in the current class runs.
     #
     # ```
-    # ExampleTest < Testify::Test
+    # class ExampleTest < Testify::Test
     #   def around_each(test) : Nil
     #     puts "around_each: before"
     #     test.run
