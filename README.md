@@ -142,7 +142,7 @@ end
    dependencies:
      testify:
        github: nicolab/crystal-testify
-       version: ~> 1.0.0 # Check the latest version!
+       version: ~> 1.0.1 # Check the latest version!
 ```
 
 2. Run `shards install`
